@@ -693,6 +693,13 @@ sub checkDatabase {
 			additional_definitions 		=> "KEY serial (serial,ip), KEY serial6 (serial,ip6)",
 			table_options			=> "ENGINE=MyISAM",
 			},
+        "dnscache" => {
+            column_definitions => [
+                "ip4"            , "int(10) unsigned",
+                "ip6"           , "binary(16)",
+                "hostname"      , "varchar(255)",
+                ],
+            },
 	);
 
 	# Get current tables in this DB.
